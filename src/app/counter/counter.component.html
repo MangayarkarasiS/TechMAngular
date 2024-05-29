@@ -1,0 +1,12 @@
+<p>counter works!</p>
+
+<h1>My Movie name displayed with string interpolation:{{myMovie}} </h1>
+<input type="text" value={{myMovie}} />
+
+<h1>Property binding</h1>
+<input class="text-primary" type="text" [value]="myMovie"/>
+
+<img [src]="imagepath" alt="Rose image"/>
+
+<button class="btn btn-success" (click)="changeMovie()">Submit</button> 
+

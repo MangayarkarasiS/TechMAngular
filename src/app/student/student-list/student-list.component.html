@@ -1,0 +1,36 @@
+<div class="container">
+    <ul>
+        <li *ngIf="empname; else godown";>{{empname}}</li>
+        <ng-template #godown>
+          <p>No employee present</p>
+        </ng-template>
+    </ul>
+</div>
+
+ <div class="container">
+    <h2>List of Students</h2>
+    <table class="table table-striped">
+        <thead class="table-dark text-white">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>TotalMarks</th>
+                <th>Percentage</th>
+                <th>DOB</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stud of allStudents" [ngClass]="{'table-danger':stud.studTotalMarks<=50}">
+              <td>{{stud.Id}}</td>
+              <td>{{stud.studName | uppercase}}</td>
+              <td>{{stud.studTotalMarks | currency :'INR':'symbol'}}</td>
+              <td>{{stud.studTotalMarks/100 |percent}}</td>
+              <td>{{stud.studDOB}}</td>
+              <!--<td [ngStyle]="{'font-size':sz+'px'}">{{stud.studDOB}}</td>-->
+              <!--<td *ngIf="stud.studGender=='Male'">{{stud.studGender}}</td>-->
+              <td [ngStyle]="{'color':getGender(stud.studGender)}">{{stud.studGender}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
