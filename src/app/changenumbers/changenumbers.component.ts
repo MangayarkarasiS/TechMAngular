@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class ChangenumbersComponent implements OnInit {
 
    age:number=10;
+   
 
   constructor() { }
 

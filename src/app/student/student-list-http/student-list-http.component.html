@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>List of Books</h2>
+    
+    <table class="table table-striped">
+        <thead class="table-dark text-white">
+            <tr>
+                <th>BookId</th>
+                <th>BookName</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr *ngFor="let book of allBooks" >
+              <td>{{book.bookid}}</td>
+              <td>{{book.booknm | uppercase}}</td>
+              <td>{{book.price}}</td>
+              <td>{{book.category}}</td>
+              <td><button type="button" (click)="deleteBook(book.bookid)">Delete</button></td>
+              </tr>
+        </tbody>
+    </table>
+    </div>

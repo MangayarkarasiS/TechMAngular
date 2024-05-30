@@ -1,11 +1,11 @@
-<div class="container">
+<!--<div class="container">
     <ul>
         <li *ngIf="empname; else godown";>{{empname}}</li>
         <ng-template #godown>
           <p>No employee present</p>
         </ng-template>
     </ul>
-</div>
+</div>-->
 
  <div class="container">
     <h2>List of Students</h2>
@@ -21,15 +21,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let stud of allStudents" [ngClass]="{'table-danger':stud.studTotalMarks<=50}">
+            <!--<tr *ngFor="let stud of allStudents" [ngClass]="{'table-danger':stud.studTotalMarks<=50}">-->
+                <tr *ngFor="let stud of allStudents" >
               <td>{{stud.Id}}</td>
               <td>{{stud.studName | uppercase}}</td>
               <td>{{stud.studTotalMarks | currency :'INR':'symbol'}}</td>
               <td>{{stud.studTotalMarks/100 |percent}}</td>
-              <td>{{stud.studDOB}}</td>
+              <td>{{stud.studDOB }}</td>
+              <td>{{stud.studGender}}</td>
               <!--<td [ngStyle]="{'font-size':sz+'px'}">{{stud.studDOB}}</td>-->
-              <!--<td *ngIf="stud.studGender=='Male'">{{stud.studGender}}</td>-->
-              <td [ngStyle]="{'color':getGender(stud.studGender)}">{{stud.studGender}}</td>
+              <!--<td *ngIf="stud.studGender=='Male'">{{stud.studGender}}</td>
+              <td [ngStyle]="{'color':getGender(stud.studGender)}">{{stud.studGender}}</td>-->
             </tr>
         </tbody>
     </table>

@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TechMAng';
+   
+  emptitle='HR';
+
+  onchangeTitle(){
+    this.emptitle="Admin";
+  }
+
+ 
+   onchangeName()
+   {
+    this.title='MoifiedTEchMANG';
+   }
 }

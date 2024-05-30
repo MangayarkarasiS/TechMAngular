@@ -5,6 +5,16 @@
 
  <app-counter></app-counter>
 
- <app-changenumbers></app-changenumbers>-->
- <app-student-list></app-student-list>
+ <app-changenumbers></app-changenumbers>
+
+ <h3>Designation of Employee from root: {{emptitle}}</h3>
+
+ <app-child [desig]="emptitle" (changename)="onchangeTitle()"></app-child>
+-->
+ <!--{{title}}
+ <app-counter [Tit]="title" (changeNa
+ me)="onchangeName()"></app-counter>
+<app-student-list></app-student-list>-->
+ <app-student-list-http></app-student-list-http>
+ 
 <router-outlet></router-outlet>
