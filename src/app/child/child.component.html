@@ -1,5 +1,48 @@
 <p>child works!</p>
-<h3>Designation of Employee in child: {{desig}}</h3>
+<!--<h3>Designation of Employee in child: {{desig}}</h3>
 <input type="text" [(ngModel)]="desig"/>
 <button type="button" (click)="updatetitle()">ChangeTitle</button>
-  
+-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" 
+            routerLink="display" >DisplayComponent</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="counter" >CounterComponent</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="color" >Color</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="studentlist" >StudentList</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="studentview" >StudentView</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#" >Animation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#" >StudentHttpComponent</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="operatorRxjs" >Observable</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login" >Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="logout" >Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

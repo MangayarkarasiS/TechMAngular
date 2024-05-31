@@ -10,6 +10,10 @@ import { StudentListComponent } from './student/student-list/student-list.compon
 import { ChildComponent } from './child/child.component';
 import { StudentListHttpComponent } from './student/student-list-http/student-list-http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentAddHttpComponent } from './student/student-add-http/student-add-http.component';
+import { HeaderComponent } from './header/header.component';
+import { ErrorComponent } from './error/error.component';
+import { StudentViewHttpComponent } from './student/student-view-http/student-view-http.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     ChangenumbersComponent,
     StudentListComponent,
     ChildComponent,
-    StudentListHttpComponent
+    StudentListHttpComponent,
+    StudentAddHttpComponent,
+    HeaderComponent,
+    ErrorComponent,
+    StudentViewHttpComponent
   ],
   imports: [
     BrowserModule,

@@ -18,12 +18,16 @@ export class StudHttpService {
     return this.httpClient.get<Book[]>(this.baseUrl);
   }
 
-  getAllBookById(id:number):Observable<Book>{
+  getABookById(id:number):Observable<Book>{
     return this.httpClient.get<Book>(this.bookidurl+'/'+id);
-  }
+  } 
 
     deleteBook(bookid:number):Observable<void>{
     return this.httpClient.delete<void>(this.baseUrl+'/'+bookid);
+  }
+
+  addBooks(Bookinfo:Book):Observable<Book>{
+    return this.httpClient.post<Book>(this.baseUrl,Bookinfo);
   }
 
   }

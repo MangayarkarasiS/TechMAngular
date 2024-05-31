@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudHttpService } from 'src/app/services/stud-http.service';
 import { Book } from '../Book.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list-http',
@@ -10,7 +11,8 @@ import { Book } from '../Book.model';
 export class StudentListHttpComponent implements OnInit {
  allBooks:Book[]=[];
 
-  constructor(private studhttp:StudHttpService) { }
+  constructor(private studhttp:StudHttpService,
+              private router:Router) { }
   
   loaddata(){
     this.studhttp.getAllBooks().subscribe({
@@ -28,7 +30,9 @@ export class StudentListHttpComponent implements OnInit {
    this.loaddata(); 
   }
 
-
+  viewBook(bookid:number){
+     this.router.navigate(['student-view-http',bookid]);
+  }
 
   deleteBook(bookid:number){
     this.studhttp.deleteBook(bookid).subscribe({

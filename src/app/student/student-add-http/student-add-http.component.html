@@ -1,0 +1,54 @@
+<div class="container">
+    <form #myForm="ngForm" (ngSubmit)="addBook(myForm)">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3>Add Books</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="BookName" class="form-label">Book Name</label>
+                   <input type="text" class="form-control" id="BookName" name="BookName" 
+                           ngModel
+                           required
+                           #myBookName="ngModel">   
+                           <div class="text-danger" 
+                           *ngIf="myBookName.errors?.['required'] && myBookName.touched">
+                        Book name is required
+                      </div>                       
+                          
+                </div>
+                <div class="form-group">
+                    <label for="price" class="form-label">Book Price</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="price" 
+                           name="price" 
+                           ngModel
+                           required
+                           #myprice="ngModel">
+                           <div class="text-danger" *ngIf="!myprice.valid && myprice.touched">
+                             Please enter Book Price
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="BookCat" class="form-label">Book category</label>
+                    <input type="text" class="form-control" id="BookCat" name="BookCat"
+                    ngModel required
+                    #myCategory="ngModel">
+                    <div class="text-danger" *ngIf="!myCategory.valid && myCategory.touched">
+                      Please enter Book Category
+                   </div>
+                </div>
+               
+            </div>
+            <div class="card-footer bg-warning text-white">
+                <button type="submit" class="btn btn-success" [disabled]="myForm.invalid" >Add Book</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+

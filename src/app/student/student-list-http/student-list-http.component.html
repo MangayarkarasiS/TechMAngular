@@ -9,6 +9,7 @@
                 <th>Price</th>
                 <th>Category</th>
                 <th>Delete</th>
+                <th>View</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +20,9 @@
               <td>{{book.price}}</td>
               <td>{{book.category}}</td>
               <td><button type="button" (click)="deleteBook(book.bookid)">Delete</button></td>
+              <td><button type="button" (click)="viewBook(book.bookid)">View</button></td>
               </tr>
         </tbody>
+        
     </table>
     </div>
