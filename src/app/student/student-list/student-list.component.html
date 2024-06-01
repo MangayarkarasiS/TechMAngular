@@ -9,6 +9,14 @@
 
  <div class="container">
     <h2>List of Students</h2>
+    <div class="form-group m-3">
+        <input 
+             type="text" 
+             class="form-control" 
+             [(ngModel)]="filterValue"
+             placeholder="Enter Gender" 
+             >
+    </div>
     <table class="table table-striped">
         <thead class="table-dark text-white">
             <tr>
@@ -21,8 +29,9 @@
             </tr>
         </thead>
         <tbody>
-            <!--<tr *ngFor="let stud of allStudents" [ngClass]="{'table-danger':stud.studTotalMarks<=50}">-->
-                <tr *ngFor="let stud of allStudents" >
+            <!--<tr *ngFor="let stud of allStudents" [ngClass]="{'table-danger':stud.studTotalMarks<=50}">
+                <tr *ngFor="let stud of allStudents | filterdata:filterValue" >-->
+                    <tr *ngFor="let stud of allStudents">
               <td>{{stud.Id}}</td>
               <td>{{stud.studName | uppercase}}</td>
               <td>{{stud.studTotalMarks | currency :'INR':'symbol'}}</td>

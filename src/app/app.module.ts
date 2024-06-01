@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { ChangenumbersComponent } from './changenumbers/changenumbers.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { ChildComponent } from './child/child.component';
 import { StudentListHttpComponent } from './student/student-list-http/student-list-http.component';
@@ -14,6 +14,8 @@ import { StudentAddHttpComponent } from './student/student-add-http/student-add-
 import { HeaderComponent } from './header/header.component';
 import { ErrorComponent } from './error/error.component';
 import { StudentViewHttpComponent } from './student/student-view-http/student-view-http.component';
+import { FilterdataPipe } from './pipes/filterdata.pipe';
+import { StudentEditHttpComponent } from './student/student-edit-http/student-edit-http.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,16 @@ import { StudentViewHttpComponent } from './student/student-view-http/student-vi
     StudentAddHttpComponent,
     HeaderComponent,
     ErrorComponent,
-    StudentViewHttpComponent
+    StudentViewHttpComponent,
+    FilterdataPipe,
+    StudentEditHttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

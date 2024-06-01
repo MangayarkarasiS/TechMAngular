@@ -9,6 +9,7 @@ import { StudService } from 'src/app/services/stud.service';
 })
 export class StudentListComponent implements OnInit {
     empname="TechM";
+    filterValue="";
     sz=50;
     color:string[]=["red","blue","Green"];
     allStudents:stud[]=[];

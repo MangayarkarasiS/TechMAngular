@@ -25,11 +25,13 @@ export class StudentListHttpComponent implements OnInit {
       }
     })
   }
-   
+   filterValue="";
   ngOnInit(): void {
    this.loaddata(); 
   }
-
+  editBook(bookid:number){
+   this.router.navigate(['student-edit-http',bookid]);
+  }
   viewBook(bookid:number){
      this.router.navigate(['student-view-http',bookid]);
   }

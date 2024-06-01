@@ -1,6 +1,13 @@
 <div class="container">
     <h2>List of Books</h2>
-    
+    <div class="form-group m-3">
+        <input 
+             type="text" 
+             class="form-control" 
+             [(ngModel)]="filterValue"
+             placeholder="Enter Category" 
+             >
+    </div>
     <table class="table table-striped">
         <thead class="table-dark text-white">
             <tr>
@@ -8,17 +15,19 @@
                 <th>BookName</th>
                 <th>Price</th>
                 <th>Category</th>
+                <th>Edit</th>
                 <th>Delete</th>
                 <th>View</th>
             </tr>
         </thead>
         <tbody>
             
-                <tr *ngFor="let book of allBooks" >
+                <tr *ngFor="let book of allBooks|filterdata:filterValue" >
               <td>{{book.bookid}}</td>
               <td>{{book.booknm | uppercase}}</td>
               <td>{{book.price}}</td>
               <td>{{book.category}}</td>
+              <td><button type="button" (click)="editBook(book.bookid)">Edit</button></td>
               <td><button type="button" (click)="deleteBook(book.bookid)">Delete</button></td>
               <td><button type="button" (click)="viewBook(book.bookid)">View</button></td>
               </tr>

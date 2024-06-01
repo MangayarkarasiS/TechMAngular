@@ -26,6 +26,10 @@ export class StudHttpService {
     return this.httpClient.delete<void>(this.baseUrl+'/'+bookid);
   }
 
+  updateBook(Bookdata:Book):Observable<void>{
+    return this.httpClient.put<void>(this.baseUrl+'/'+Bookdata.bookid,Bookdata);
+  }
+
   addBooks(Bookinfo:Book):Observable<Book>{
     return this.httpClient.post<Book>(this.baseUrl,Bookinfo);
   }

@@ -1,0 +1,45 @@
+
+
+<div class="container">
+    <form [formGroup]="myReactiveForm" (ngSubmit)="editBook(myReactiveForm)">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h3>Edit Books</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="BookName" class="form-label">Book Name</label>
+                   <input type="text" class="form-control" id="BookName" 
+                   formControlName="rsName" >
+                                                                           
+                          
+                </div>
+                <div class="form-group">
+                    <label for="price" class="form-label">Book Price</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="price" 
+                           formControlName="rsprice"
+                          >
+                           
+                </div>
+                <div class="form-group">
+                    <label for="BookCat" class="form-label">Book category</label>
+                    <input type="text" class="form-control" id="BookCat" 
+                    formControlName="rscategory">
+                   
+                </div>
+               
+            </div>
+            <div class="card-footer bg-info text-white">
+                <button type="submit" class="btn btn-success" [disabled]="!myReactiveForm.valid" >Update Book</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+

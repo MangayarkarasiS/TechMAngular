@@ -1,3 +1,5 @@
+
+
 <div class="container">
     <form #myForm="ngForm" (ngSubmit)="addBook(myForm)">
         <div class="card">
@@ -8,11 +10,9 @@
                 <div class="form-group">
                     <label for="BookName" class="form-label">Book Name</label>
                    <input type="text" class="form-control" id="BookName" name="BookName" 
-                           ngModel
-                           required
-                           #myBookName="ngModel">   
+                           ngModel required #myBookName="ngModel">   
                            <div class="text-danger" 
-                           *ngIf="myBookName.errors?.['required'] && myBookName.touched">
+                           *ngIf="myBookName.errors?.['re ed'] && myBookName.touched">
                         Book name is required
                       </div>                       
                           
@@ -28,6 +28,9 @@
                            #myprice="ngModel">
                            <div class="text-danger" *ngIf="!myprice.valid && myprice.touched">
                              Please enter Book Price
+                          </div>
+                          <div class="text-danger" *ngIf="myprice.pristine">
+                            Value has not been changed
                           </div>
                 </div>
                 <div class="form-group">

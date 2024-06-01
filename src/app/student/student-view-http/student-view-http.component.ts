@@ -16,8 +16,6 @@ export class StudentViewHttpComponent implements OnInit {
     category:""
 
   }
-
-
   constructor(private studhttpservice:StudHttpService,
               private activatedRoute:ActivatedRoute,
               private router:Router
